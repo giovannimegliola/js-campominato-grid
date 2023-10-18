@@ -1,9 +1,26 @@
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function(){
+
+  const numCell = 100;   //celle da generare
+
+  const playground = document.getElementById('playground');
+
+  playground.innerHTML = ''; //reset
+
+  for (let i = 0; i < numCell; i++){    //ciclo sulla griglia per stampare le celle
+    let cell = drawCell();           // genero le celle
+    playground.append(cell);        //aggiungo la cella alla griglia
+  }
+
+})
+
 // funzione per disegnare le celle nella griglia 10x10
 
 function drawCell(){
   const cell = document.createElement('div');
   cell.classList.add('cell');
-  cell.addEventListener('click', function(){
+  cell.addEventListener('click', function(){      //cambio colore alla cella quando ci clicco
     cell.classList.add('active');
   });
   return cell;
