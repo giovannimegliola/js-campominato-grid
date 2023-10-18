@@ -8,7 +8,7 @@ btn.addEventListener('click', function(){
 
   playground.innerHTML = ''; //reset
 
-  for (let i = 0; i < numCell; i++){    //ciclo sulla griglia per stampare le celle
+  for (let i = 1; i <= numCell; i++){    //ciclo sulla griglia per stampare le celle
     let cell = drawCell();           // genero le celle
     playground.append(cell);        //aggiungo la cella alla griglia
   }
