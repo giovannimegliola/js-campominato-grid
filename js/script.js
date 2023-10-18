@@ -9,7 +9,7 @@ btn.addEventListener('click', function(){
   playground.innerHTML = ''; //reset
 
   for (let i = 1; i <= numCell; i++){    //ciclo sulla griglia per stampare le celle
-    let cell = drawCell();           // genero le celle
+    let cell = drawCell(i);           // genero le celle
     playground.append(cell);        //aggiungo la cella alla griglia
   }
 
@@ -17,11 +17,12 @@ btn.addEventListener('click', function(){
 
 // funzione per disegnare le celle nella griglia 10x10
 
-function drawCell(){
+function drawCell(cellNumber){
   const cell = document.createElement('div');
   cell.classList.add('cell');
   cell.addEventListener('click', function(){      //cambio colore alla cella quando ci clicco
     cell.classList.add('active');
+    console.log('hai cliccato la cella:' + cellNumber);
   });
   return cell;
 }
